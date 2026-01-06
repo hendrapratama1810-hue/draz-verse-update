@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>DRAZ VERSE 1.0</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{
+    height:100vh;
+    background:#0b1f14;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#00ff99;
+}
+.bg{
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(#00ff9933 2px, transparent 2px);
+    background-size:40px 40px;
+    animation:move 20s linear infinite;
+    filter:blur(6px);
+}
+@keyframes move{
+    from{transform:translateY(0)}
+    to{transform:translateY(-500px)}
+}
+.container{
+    position:relative;
+    background:#000000aa;
+    padding:25px;
+    width:330px;
+    border-radius:15px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+.banner{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+input,button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    border:none;
+    border-radius:8px;
+}
+button{
+    background:#00ff99;
+    font-weight:bold;
+}
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+    <img src="banner.gif" class="banner">
+
+    <h2>DRAZ VERSE 1.0</h2>
+
+    <input id="user" placeholder="Username">
+    <input id="pw" type="password" placeholder="Password">
+
+    <button onclick="login()">LOGIN</button>
+
+    <a href="https://wa.me/6283817102474?text=mau+access+apk+bug+DRAZ+verse+bang">
+        <button class="whatsapp">📞 Contact Us For Access</button>
+    </a>
+</div>
+
+<script>
+function login(){
+    const u = user.value;
+    const p = pw.value;
+
+    if(u==="DRAZX" && p==="12"){
+        localStorage.setItem("login","user");
+        let log = JSON.parse(localStorage.getItem("userLog")||"[]");
+        log.push("DRAZX");
+        localStorage.setItem("userLog",JSON.stringify(log));
+        location.href="page2.html";
+    }
+    else if(u==="Admin" && p==="Admin123#"){
+        localStorage.setItem("login","admin");
+        location.href="page2.html";
+    }
+    else{
+        document.body.innerHTML="";
+    }
+}
+</script>
+</body>
+</html>

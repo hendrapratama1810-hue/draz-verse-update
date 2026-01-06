@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DRAZ VERSE MENU</title>
+<style>
+body{
+    margin:0;
+    background:#0b1f14;
+    color:#00ff99;
+    font-family:Arial;
+}
+.menu{
+    padding:20px;
+}
+.top{
+    display:flex;
+    justify-content:space-between;
+}
+.hamburger{
+    font-size:24px;
+    cursor:pointer;
+}
+.dropdown{
+    display:none;
+    position:absolute;
+    background:#000;
+    padding:10px;
+}
+button{
+    width:100%;
+    margin:10px 0;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#00ff99;
+}
+</style>
+</head>
+<body>
+
+<div class="menu">
+    <div class="top">
+        <div class="hamburger" onclick="toggle()">☰</div>
+        <h2>DRAZ VERSE V 1.0</h2>
+    </div>
+
+    <div class="dropdown" id="dd">
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <button onclick="go('profile.html')">My Profile</button>
+    <button onclick="go('feature.html')">Feature</button>
+    <button id="adminBtn" onclick="go('admin.html')">Admin Tools⚒️</button>
+</div>
+
+<script>
+const role = localStorage.getItem("login");
+if(role!=="admin") adminBtn.style.display="none";
+
+function toggle(){
+    dd.style.display = dd.style.display==="block"?"none":"block";
+}
+function logout(){
+    localStorage.clear();
+    location.href="index.html";
+}
+function go(p){
+    location.href=p;
+}
+</script>
+</body>
+</html>
